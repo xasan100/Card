@@ -1,6 +1,6 @@
 import React, { useState, useContext, useReducer } from 'react'
 import { XasanInfo } from '../Context/context.js'
-import { Box, BoxBtn, Btn, Catolog, Container, Model, Narxi, Price, PriceSena, Sena, Senamin, SvetColor } from "./styled.js"
+import { Box, BoxBtn, Btn, BtnRadio, Catolog, Container, Model, Narxi, Price, PriceSena, Sena, Senamin, SvetColor } from "./styled.js"
 
 
 export const Carsina = () => {
@@ -10,6 +10,8 @@ export const Carsina = () => {
     const [price, setPrice] = useState(0)
     const [option, setOption] = useState(0)
     const [dataa, setData] = useContext(XasanInfo)
+    const [active, setIsActive] = useState(false)
+
 
     // const [counter, dispatch] = useReducer((state, action) => {
     //     switch (action.type) {
@@ -38,14 +40,16 @@ export const Carsina = () => {
     }
     const handeltext = (e) => {
         console.log((e.target.value));
+
     }
+
 
     return (
         <Box>
             <h1>Корзина</h1>
 
-            {dataa.map((value) => (
-                <Container  >
+            {dataa.map((value, ind) => (
+                <Container key={ind} >
                     <Catolog >
                         <div>
                             <img src={value?.img} alt="" />
@@ -60,15 +64,22 @@ export const Carsina = () => {
 
                     <SvetColor>
                         <p>{value?.rangi}</p>
-                        <img src={value?.imgcolor2} alt="" />
-                        <img src={value?.imgcolor4} alt="" />
-                        <img src={value?.imgcolor5} alt="" />
-                        <img src={value?.imgcolor6} alt="" />
-                        <img src={value?.imgcolor7} alt="" />
-                        <img src={value?.imgcolor8} alt="" />
-                        <img src={value?.imgcolor9} alt="" />
-                        <img src={value?.imgcolor10} alt="" />
-                        <img src={value?.imgcolor11} alt="" />
+                        <BtnRadio class="group">
+                            <input type="radio" id="radio01" name="radio" />
+                            <label for="radio0"></label>
+                        </BtnRadio>
+                        <BtnRadio class="group">
+                            <input type="radio" id="radio02" name="radio" />
+                            <label for="radio0"></label>
+                        </BtnRadio>
+                        <BtnRadio class="group">
+                            <input type="radio" id="radio01" name="radio" />
+                            <label for="radio0"></label>
+                        </BtnRadio>
+                        <BtnRadio class="group">
+                            <input type="radio" id="radio02" name="radio" />
+                            <label for="radio0"></label>
+                        </BtnRadio>
                     </SvetColor>
                     < Price>
                         <Sena>

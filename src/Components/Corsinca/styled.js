@@ -127,6 +127,15 @@ cursor: pointer ;
 
 }
 `
+export const BtnRadio = styled.button`
+width:20px  ;
+height: 20px ;
+border-radius: 50% ;
+border: none ;
+:active{
+}
+cursor: pointer;
+`
 
 export const PriceSena = styled.div`
 position: absolute ;
