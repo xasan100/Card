@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Context from './Components/Context/context.js';
-import Root from './root/index.jsx';
+import   Root from "./Root/index.jsx" 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

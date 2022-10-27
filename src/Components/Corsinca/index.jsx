@@ -1,6 +1,5 @@
 import React, { useState, useContext, useReducer } from 'react'
 import { XasanInfo } from '../Context/context.js'
-
 import { Box, BoxBtn, Btn, Catolog, Container, Model, Narxi, Price, PriceSena, Sena, Senamin, SvetColor } from "./styled.js"
 
 
@@ -12,15 +11,15 @@ export const Carsina = () => {
     const [option, setOption] = useState(0)
     const [dataa, setData] = useContext(XasanInfo)
 
-    const [counter, dispatch] = useReducer((state, action) => {
-        switch (action.type) {
-            case 'minus':
-                return state - sena;
-            case 'plus':
-                return state + sena;
-            default: return state
-        }
-    }, 0)
+    // const [counter, dispatch] = useReducer((state, action) => {
+    //     switch (action.type) {
+    //         case 'minus':
+    //             return state - sena;
+    //         case 'plus':
+    //             return state + sena;
+    //         default: return state
+    //     }
+    // }, 0)
 
 
 
@@ -44,6 +43,7 @@ export const Carsina = () => {
     return (
         <Box>
             <h1>Корзина</h1>
+
             {dataa.map((value) => (
                 <Container  >
                     <Catolog >
@@ -77,6 +77,7 @@ export const Carsina = () => {
                         </Sena>
                         <BoxBtn>
                             <Btn>
+                                {/* <button onClick={() => dispatch({ type: 'minus', type: 'selcetplus', payload: option })}>▼</button> */}
                                 <button onClick={decrement}>▼</button>
                             </Btn>
                             <select defaultValue={0} id="Number" onChange={(e) => handeltext(e)}>
@@ -88,14 +89,18 @@ export const Carsina = () => {
                                 <option >50</option>
                             </select>
                             <Btn>
+                                {/* <button onClick={() => dispatch({ type: 'plus' })}>▲</button> */}
                                 <button onClick={incerment}>▲</button>
                             </Btn>
                         </BoxBtn>
                         <PriceSena>
+                            <p>
+                                {count}
+                                <p> ₽</p>  </p>
                         </PriceSena>
                     </Price>
-
                 </Container>
+
             ))
             }
         </Box >
@@ -103,4 +108,3 @@ export const Carsina = () => {
 
     )
 }
-
