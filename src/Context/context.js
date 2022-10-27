@@ -1,6 +1,5 @@
 import React, { createContext, useState } from 'react'
-import { data } from '../Mock/data.js'
-
+import data from "../Components/Mock/data.js"
 export const XasanInfo = createContext()
 
 const Context = ({ children }) => {

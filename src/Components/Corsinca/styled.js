@@ -139,7 +139,7 @@ cursor: pointer;
 
 export const PriceSena = styled.div`
 position: absolute ;
-left: 210px ;
+left: 225px ;
 top: 15px ;
 p{
 font-style: normal;
